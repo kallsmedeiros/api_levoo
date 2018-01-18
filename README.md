@@ -1,25 +1,28 @@
-# README
+# README LEVOO API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#SURVIVORS
 
-Things you may want to cover:
+# GET /api/v1/survivors # INDEX
+  mostra todos os sobreviventes
 
-* Ruby version
+# GET /api/v1/survivors/1 # SHOW
+  mostra sobrevivente com id 1
 
-* System dependencies
+# POST /api/v1/survivors #CREATE
+  cria survivor
+  parametros = name, age, gender, infected, latitude, longitude
 
-* Configuration
+  exemplo de como enviar os paramentros:
+  survivor[name] = "nome"
+  survivor[age] = 22
+  survivor[gender] = "f" ou "m"
+  survivor[infected] = false
+  survivor[latitude] = 1223124
+  survivor[longitude] = 124354534
 
-* Database creation
+# PATCH/PUT /api/v1/survivors/1 # update
+  atualizar sobrevivente com id 1
+  Atualizacao só permite o sobrevivente atualizar sua localicacao
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# api_levoo
+  survivor[latitude] = 1223124
+  survivor[longitude] = 124354534
