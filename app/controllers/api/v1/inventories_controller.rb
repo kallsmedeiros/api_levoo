@@ -13,7 +13,6 @@ module Api
       #    render json: @inventories
       # end
 
-      # GET /api/v1/inventories/1
       def show
         if @inventory == nil
           render json: :infected if Inventory.find(params[:id]).survivor.infected?
@@ -23,15 +22,15 @@ module Api
       end
 
       # POST /api/v1/inventories
-      def create
-
-        @inventory = Inventory.new(inventory_params)
-        if @inventory.save
-          render json: @inventory, status: :created
-        else
-          render json: @inventory.errors, status: :unprocessable_entity
-        end
-      end
+      # def create
+      #
+      #   @inventory = Inventory.new(inventory_params)
+      #   if @inventory.save
+      #     render json: @inventory, status: :created
+      #   else
+      #     render json: @inventory.errors, status: :unprocessable_entity
+      #   end
+      # end
 
       # PATCH/PUT /api/v1/inventories/1
       def update
